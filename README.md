@@ -426,13 +426,13 @@ Contributions are welcome! Here's how you can help:
 ## 📸 Screenshots
 
 ### Chat Interface
-![Chat Interface](frontend/public/chat.png)
+![Chat Interface](frontend/output/chat.png)
 
 ### Settings Page
-![Settings](frontend/public/setting.png)
+![Settings](frontend/output/setting.png)
 
 ### Logout Confirmation
-![Logout](frontend/public/logout.png)
+![Logout](frontend/output/logout.png)
 
 ## 📄 License
 

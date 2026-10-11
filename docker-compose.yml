@@ -1,0 +1,49 @@
+
+services:
+  mongodb:
+    build:
+      context: .
+      dockerfile: mongodb.Dockerfile
+    volumes:
+      - mongo-data:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mongoadmin
+      - MONGO_INITDB_ROOT_PASSWORD=secret
+    ports:
+      - "27017:27017"
+    networks:
+      - fullstack-chatapp
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: full-stack_backend
+    environment:
+      - NODE_ENV=production
+      - MONGODB_URI=mongodb://mongoadmin:secret@mongodb:27017/chatapp?authSource=admin
+      - JWT_SECRET=REPLACE_WITH_A_NEW_RANDOM_SECRET
+      - PORT=5001
+    depends_on:
+      - mongodb
+    networks:
+      - fullstack-chatapp
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: full-stack_frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - fullstack-chatapp
+
+networks:
+  fullstack-chatapp:
+    driver: bridge
+
+volumes:
+  mongo-data:

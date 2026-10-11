@@ -448,7 +448,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👤 Author
 
 **Pavan**
-- GitHub: [@sakethksg](https://github.com/saipavan1654)
+- GitHub: [@saipavan](https://github.com/saipavan1654)
 - Repository: [ChatHub](https://github.com/saipavan/SynChat)
 
 ---
